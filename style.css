@@ -9,6 +9,12 @@
     font-size: 30px;
   }
   
+  .login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
   .botao-login {
     
     display: inline-block;
