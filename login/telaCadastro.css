@@ -5,16 +5,22 @@ body{
 }
 
 input{
-    width: 50%;
+    transform: translate(-7%);
+    width: 100%;
     padding: 15px;
     border-radius: 15px;
 }
 
 button{
     background-color: rgb(255, 255, 255);
-    width: 30%;
+    width: 40%;
     height: 30px;
     border-radius: 30px;
+    
+}
+
+button:hover{
+    background-color: #00ff44;
 }
 
 a{
@@ -29,7 +35,7 @@ a{
         background-color: #ff0000;
 }
 
-.telaLogin{
+.telaCadastro{
     background-color: rgba(0,0,0,0.8);
     position: absolute;
     top: 50%;
@@ -38,4 +44,8 @@ a{
     padding: 80px;
     border-radius: 15px;
     color: white;
+}
+
+.Login{
+    background-color: #000000;
 }
