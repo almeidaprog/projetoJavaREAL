@@ -1,0 +1,36 @@
+:root{
+    --base-clr: #11121a;
+    --line-clr: #42434a;
+    --hover-clr: #222533;
+    --text-clr: #e6e6ef;
+    --accent-clr: #5e63ff;
+    --secondary-text-clr: #b0b3c1;
+}
+
+main{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    /* display: grid; */
+    /* grid-template-columns: auto 1fr; */
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__sheets{
+    display: grid;
+    grid-template-columns: auto auto;  
+    gap: 5rem; 
+}
+
+.dnd-sheet, .vtm-sheet, .pf-sheet, .coc-sheet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
