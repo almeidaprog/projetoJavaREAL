@@ -3,7 +3,7 @@ package com.rpgsheets.model;
 import jakarta.persistence.*;
 
 @Entity
-public class DnDSheet {
+public class DnDSheet{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
