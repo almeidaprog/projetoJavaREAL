@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fichas de RPG - Login</title>
     <link href="./styles/conta.css" rel="stylesheet" />
-    <script src="./scripts/redirecionar.js"></script>
 </head>
 <body>
     <div class="telaLogin">
         <h1>
             Login
         </h1>
-        <input type ="text" placeholder="Usuário">
-        <br><br>
-        <input type ="password" placeholder="Senha">
-        <br><br>
-
-        <div class="Login">
-            <a href="index.html">Logar</a>
-
-        </div>
-
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <br><br>
+            <input type="password" id="password" placeholder="Senha" required>
+            <br><br>
+            <button type="submit">Entrar</button>
+        </form>
+        
+        
         <h2>
             Não possui uma conta? Faça o cadastro <a href="telaCadastro.html">aqui</a>
         </h2>
         
     </div>
+    <script src="./scripts/cadastroUsuario.js"></script>
 </body>
 </html>
