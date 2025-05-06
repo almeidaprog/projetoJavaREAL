@@ -1,3 +1,11 @@
+.main-section{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
 #sidebar{
     box-sizing: border-box;
     height: 100vh;
@@ -9,6 +17,13 @@
     position: sticky;
     top: 0;
     align-self: start;
+    transition: 300ms ease-in-out;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+#sidebar.close{
+    padding: 5px;
+    width: 60px;
 }
 
 #sidebar ul{
@@ -56,12 +71,47 @@
 }
 
 #sidebar .sub-menu{
-    overflow: hidden;
-    height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
     transition: 300ms ease-in-out;
+
+
+    > div{
+        overflow: hidden;
+    }
 }
 
 #sidebar .sub-menu.show{
-    height: auto;
+    grid-template-rows: 1fr;
+}
+.dropdown-btn svg{
+    transition: 200ms ease;
+}
+.rotate svg:last-child{
+    rotate: 180deg;
+
+}
+#sidebar .sub-menu a{
+    padding-left: 2em;
+}
+
+#toggle-btn{
+    margin-left: auto;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+
+    svg{
+        transition: rotate 150ms ease;
+    }
+}
+#toggle_btn:hover{
+    background-color: var(--hover-clr);
+}
+#active{
+    position: absolute;
+    margin-left: 44rem;
 }
 
