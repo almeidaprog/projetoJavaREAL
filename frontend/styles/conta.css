@@ -13,8 +13,12 @@ input{
 button{
     background-color: rgb(255, 255, 255);
     width: 30%;
-    height: 30px;
-    border-radius: 30px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+button:hover{
+    background-color: #00ff44;
 }
 
 a{
