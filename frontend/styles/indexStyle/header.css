@@ -18,8 +18,6 @@ body{
     width: 95vw;
     height: 15vh;
     background-color: var(--accent-clr);
-    
-
 }
 
 .login,.presentation{
@@ -30,28 +28,30 @@ body{
     height: 10vh;
 }
 
-
-.login-btn{
-    background-color: #04AA6D; /* Green */
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
 .login-btn {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #04AA6D;
-}
-
-.login-btn :hover {
-    background-color: #04AA6D;
-    color: white;
-}
+    
+    background-color: #4CAF50;
+    color: white; 
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px; 
+    border-radius: 5px; 
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    right: 110px;
+  }
+  
+  .login-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05); 
+  }
+  
+  .login-btn:active {
+    transform: scale(0.98); 
+    background-color: #3e8e41;
+  }
+  
+  .login a {
+    text-decoration: none; 
+  }

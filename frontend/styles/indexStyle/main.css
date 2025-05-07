@@ -8,12 +8,13 @@
 }
 
 main{
-    min-height: 100vh;
-    min-height: 100dvh;
-    background-color: var(--base-clr);
-    color: var(--text-clr);
-    /* display: grid; */
-    /* grid-template-columns: auto 1fr; */
+    padding: min(30px, 7%);
+}
+
+main p{
+  color: var(--accent-clr);
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .main-content{
@@ -45,31 +46,6 @@ main{
   .main__sheets__images:hover img {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  }
-
-
-  .login-btn {
-    background-color: #4CAF50;
-    color: white; 
-    border: none;
-    padding: 12px 24px;
-    font-size: 18px; 
-    border-radius: 5px; 
-    text-decoration: none; 
-  }
-  
-  .login-btn:hover {
-    background-color: #45a049;
-    transform: scale(1.05); 
-  }
-  
-  .login-btn:active {
-    transform: scale(0.98); 
-    background-color: #3e8e41;
-  }
-  
-  .login a {
-    text-decoration: none; 
   }
 
 
