@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Ficha D&D</title>
+    <!-- <link rel="stylesheet" href="./styles/fichaDnD.css"> -->
+</head>
+<body>
+    <h1>Criar Ficha D&D</h1>
+    <form id="fichaDnDForm">
+        <label>Nome do Personagem:</label>
+        <input type="text" id="nomePersonagem" required><br>
+
+        <label>Nome do Jogador:</label>
+        <input type="text" id="nomeDoJogador" required><br>
+
+        <label>Classe:</label>
+        <input type="text" id="classe" required><br>
+
+        <label>Nível:</label>
+        <input type="number" id="nivel" required><br>
+
+        <label>Força:</label>
+        <input type="number" id="forca" required><br>
+
+        <label>Destreza:</label>
+        <input type="number" id="destreza" required><br>
+
+        <label>Carisma:</label>
+        <input type="number" id="carisma" required><br>
+
+        <label>Inteligência:</label>
+        <input type="number" id="inteligencia" required><br>
+
+        <label>Sobrevivência:</label>
+        <input type="number" id="sobrevivencia" required><br>
+
+        <label>Furtividade:</label>
+        <input type="number" id="furtividade" required><br>
+
+        <label>Intimidação:</label>
+        <input type="number" id="intimidacao" required><br><br>
+
+        <button type="submit">Criar Ficha</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <script src="./scripts/scripts_RPG/DnDCreateSheet.js"></script>
+</body>
+</html>
