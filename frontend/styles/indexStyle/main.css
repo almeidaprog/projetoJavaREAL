@@ -8,10 +8,13 @@
 }
 
 main{
-    min-height: 100vh;
-    min-height: 100dvh;
-    background-color: var(--base-clr);
-    color: var(--text-clr);
+    padding: min(30px, 7%);
+}
+
+main p{
+  color: var(--accent-clr);
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .main-content{
