@@ -48,4 +48,33 @@ main p{
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
   }
 
+  .header-presentation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .presentation img {
+    height: 800px;
+    margin-left: 800px; 
+  }
+  
+
+.presentation__text{
+    font-size: 30px;
+}
+
+.logo img {
+    width: 45px;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+
+.inside_navigation{
+    position: relative;
+    margin-left: -60px;
+
+}
 
