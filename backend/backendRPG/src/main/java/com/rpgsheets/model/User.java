@@ -1,6 +1,7 @@
 package com.rpgsheets.model;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -11,32 +12,26 @@ public class User {
     private Long id;
 
     private String username;
-
     private String password;
 
-    // Getters e setters
+    // Relação com todas as fichas (de qualquer tipo)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Sheet> fichas;
 
-    public Long getId() {
-        return id;
-    }
+    // Getters e Setters
+    public Long getId() { return id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setId(Long id) { this.id = id; }
 
-    public String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    public void setUsername(String username) { this.username = username; }
 
-    public String getPassword() {
-        return password;
-    }
+    public String getPassword() { return password; }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public void setPassword(String password) { this.password = password; }
+
+    public List<Sheet> getFichas() { return fichas; }
+
+    public void setFichas(List<Sheet> fichas) { this.fichas = fichas; }
 }
