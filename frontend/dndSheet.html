@@ -13,6 +13,7 @@
                     <label>Nome do Personagem:</label>
                     <input type="text" id="nomePersonagem" required><br>
                 </div>
+                <div class="intro-atributo">
                     <label>Nome do Jogador:</label>
                     <input type="text" id="nomeDoJogador" required><br>
 
@@ -34,15 +35,13 @@
                     <label>Pontos de Experiência:</label>
                     <input type="number" id="pontosDeExperiencia" required><br>
 
-
-                <div>
-
                 </div>
 
             </form>
         </div>
     </header>
     <h1>Criar Ficha D&D</h1>
+    <div>
     <form id="atributosPrincipais">
 
         <label>Força:</label>
@@ -159,7 +158,166 @@
         <label>Idiomas e Outras Proficiências:</label>
         <input type="number" id="idiomasEOutrasProficiencias" required><br>
     </form>
-    
+
+    </div>
+
+    <div>
+        <form id="classeDeArmadura">
+            <label>Classe de Armadura:</label>
+            <input type="number" id="ClasseDeArmadura-id" required><br>
+        </form>
+
+        <form id="iniciativa">
+            <label>Iniciativa:</label>
+            <input type="number" id="Inciativa-id" required><br>
+        </form>
+
+        <form id="deslocamento">
+            <label>Deslocamento:</label>
+            <input type="number" id="deslocamento-id" required><br>
+        </form>
+
+        <form id="pontosDeVidaAtuais">
+            <label>Pontos de Vida Totais:</label>
+            <input type="number" id="pontosDeVidaTotais" required><br>
+
+            <label>Pontos de Vida Atuais:</label>
+            <input type="number" id="pontosDeVidaAtuais-id" required><br>
+        </form>
+
+        <form id="PontosDeVidaTemporarios">
+            <label>Pontos de Vida Temporários:</label>
+            <input type="number" id="PontosDeVidaTemporarios-id">
+        </form>
+
+        <form id="TestesContraAMorte">
+            <label>Sucesso:</label>
+            <input type="number" id="sucesso-id">
+
+            <label>Fracasso:</label>
+            <input type="number" id="fracasso-id">
+        </form>
+
+        <form id="AtaquesEMagias">
+            
+            <label>Nome:</label>
+            <input placeholder="separar por;" type="text" id="nome-id">
+
+            <label>Bônus:</label>
+            <input placeholder="separar por;" type="number" id="bonus-id">
+
+            <label>Dano/Tipo:</label>
+            <input placeholder="separar por;" type="text" id="danoTipo-id">
+
+            
+        </form>
+
+        <form id="equipamentos">
+            <label>Equipamentos:</label>
+            <input type="text" id="equpamentos-id">
+
+            <label>PC:</label>
+            <input type="number" id="pc">
+
+            <label>PP:</label>
+            <input type="number" id="pc">
+
+            <label>PE:</label>
+            <input type="number" id="pc">
+
+            <label>PO:</label>
+            <input type="number" id="pc">
+
+            <label>PL:</label>
+            <input type="number" id="pc">
+        </form>
+
+        <form id="tracosDePersonalidade">
+            <label>Traços de Personalidade:</label>
+            <input type="text" id="tracosDePersonalidade-id">
+        </form>
+
+        <form id="ideais">
+            <label>Ideais:</label>
+            <input type="text" id="ideais-id">
+        </form>
+
+        <form id="ligacoes">
+            <label>Ligações:</label>
+            <input type="text" id="ligacoes-id">
+        </form>
+
+        <form id="defeitos">
+            <label>Defeitos:</label>
+            <input type="text" id="defeitos-id">
+        </form>
+
+        <form id="ligacoes">
+            <label>Ligações:</label>
+            <input type="text" id="ligacoes-id">
+        </form>
+    </div>
+
+    <div class="dnd-intro">
+        <form id="intro">
+            <div>
+                <label>Nome do Personagem:</label>
+                <input type="text" id="nomePersonagem" required><br>
+            </div>
+            <div class="intro-atributo">
+                <label>Idade:</label>
+                <input type="number" id="idade" required><br>
+
+                <label>Altura:</label>
+                <input type="number" id="altura" required><br>
+
+                <label>Peso:</label>
+                <input type="number" id="peso" required><br>
+
+                <label>Olhos:</label>
+                <input type="text" id="olhos" required><br>
+
+                <label>Pele:</label>
+                <input type="text" id="pele" required><br>
+
+                <label>Cabelos:</label>
+                <input type="text" id="cabelos" required><br>
+            </div>
+
+        </form>
+    </div>
+
+    <div>
+    <form id="aparenciaDoPersonagem">
+        <label>Aparência do Personagem:</label>
+        <input type="text" id="aparenciaDoPersonagem-id">
+    </form>
+
+    <form id="historiaDoPersonagem">
+        <label>História do Personagem:</label>
+        <input type="text" id="historiaDoPersonagem-id">
+    </form>
+    </div>
+
+    <div>
+    <form id="aliadosEOrganizacoes">
+        <label>Aliados e Organizações:</label>
+        <input type="text" id="aliadosEOrganizações-id">
+    </form>
+
+    <form id="outrasCaracteristicasEHabilidades">
+        <label>Outras Características e Habilidades:</label>
+        <input type="text" id="outrasCaracteristicasEHabilidades-id">
+    </form>
+
+    <form id="tesouro">
+        <label>Tesouro:</label>
+        <input type="text" id="tesouro-id">
+    </form>
+
+
+    </div>
+
     <button type="submit">Criar Ficha</button>
     </form>
 
