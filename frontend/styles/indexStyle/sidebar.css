@@ -8,12 +8,13 @@
 }
 
 #sidebar{
+    font-size: 30px;
     box-sizing: border-box;
     height: 100vh;
-    width: 250px;
+    width: 550px;
     padding: 5px 1em;
     background-color: var(--base-clr);
-    border: 1px solid var(--line-clr);
+    border: 2px solid rgb(16, 2, 2);
 
     position: sticky;
     top: 0;
@@ -24,17 +25,9 @@
     text-wrap: nowrap;
 }
 
-#sidebar ul li.active a{
-    color: var(--accent-clr);
-}
  svg{
     fill: var(--accent-clr);
  }
-
-#sidebar.close{
-    padding: 4px;
-    width: 60px;
-}
 
 #sidebar ul{
     list-style: none;
@@ -46,10 +39,9 @@
     gap: 1em;
   }
   
-  #sidebar > ul > li:first-child > .logo {
+#sidebar > ul > li:first-child > .logo {
     flex-grow: 1;
   }
-  
 
 #sidebar a, #sidebar .dropdown-btn, #sidebar .logo{
     border-radius: .5em;
@@ -129,4 +121,12 @@
     right: 2rem;
 }
 
+li.active svg {
+    width: 45px;
+    height: 45px;
+  }
 
+.dropdown-btn svg {
+    width: 45px;
+    height: 45px;
+  }

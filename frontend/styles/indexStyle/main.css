@@ -37,7 +37,7 @@ main p{
 }
 
 .main__sheets__images img {
-    width: 100%;
+    width: 500px;
     height: 100%;
     transition: 0.3s ease;
     transform: scale(1); 
@@ -61,11 +61,12 @@ main p{
   
 
 .presentation__text{
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 40px;
 }
 
 .logo img {
-    width: 45px;
+    width: 430px;
     height: auto;
     display: block;
     margin: 0;
@@ -75,6 +76,5 @@ main p{
 .inside_navigation{
     position: relative;
     margin-left: -60px;
-
 }
 
