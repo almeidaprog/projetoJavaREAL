@@ -119,9 +119,11 @@
         transition: rotate 150ms ease;
     }
 }
+
 #toggle_btn:hover{
     background-color: var(--hover-clr);
 }
+
 .active{
     top: 10rem;
     right: 2rem;
