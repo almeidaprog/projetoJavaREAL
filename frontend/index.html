@@ -16,7 +16,7 @@
             <div class="presentation">
                 <img src="./assets/imgdegente/logo(1).png">
             </div>
-            <div class="login" id="loginArea">
+            <div class="login-area" id="loginArea">
                 <a href="login.html"><button class="login-btn">Login/Registrar</button></a>
             </div>
         </div>
@@ -99,23 +99,25 @@
     </main>
 </section>
     
-    
 
     <footer>
     </footer>
     <script>
-        const usuario = localStorage.getItem("usuarioLogado");
+        const user = localStorage.getItem("username");
+        const userId = localStorage.getItem("userId");
         const loginArea = document.getElementById("loginArea");
 
-        if (usuario) {
+        if (user) {
             loginArea.innerHTML = `
-                <span>Olá, <strong> ${usuario} </strong></span>
+                <p class="login-name">Olá, <strong> ${user} </strong></p>
                 <button onclick="logout()" class="login-btn">Sair</button>
             `;
         }
+        
 
         function logout() {
-            localStorage.removeItem("usuarioLogado");
+            localStorage.removeItem("username");
+            localStorage.removeItem("userId");
             location.reload(); // recarrega a página para voltar ao estado "não logado"
         }
     </script>

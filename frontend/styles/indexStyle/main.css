@@ -43,22 +43,10 @@ main p{
     transform: scale(1); 
   }
   
-  .main__sheets__images:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  }
-
-  .header-presentation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .presentation img {
-    height: 800px;
-    margin-left: 800px; 
-  }
-  
+.main__sheets__images:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+} 
 
 .presentation__text{
     font-weight: bold;

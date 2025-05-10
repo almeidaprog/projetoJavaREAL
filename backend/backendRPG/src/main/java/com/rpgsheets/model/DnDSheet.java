@@ -13,18 +13,33 @@ public class DnDSheet extends Sheet {
     private int nivel;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id") // Chave estrangeira
+    @JoinColumn(name = "usuario_id")
     private User usuario;
 
-    // Getters e Setters para os campos novos
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
 
-    public String getClasse() { return classe; }
-    public void setClasse(String classe) { this.classe = classe; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public int getNivel() { return nivel; }
-    public void setNivel(int nivel) { this.nivel = nivel; }
+    public String getClasse() {
+        return classe;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
 
     public User getUsuario() {
         return usuario;
@@ -33,6 +48,4 @@ public class DnDSheet extends Sheet {
     public void setUsuario(User usuario) {
         this.usuario = usuario;
     }
-
-
 }

@@ -3,6 +3,7 @@ document.getElementById("fichaDnDForm").addEventListener("submit", function (eve
 
     // Recupera o username armazenado no login
     const username = localStorage.getItem("username");
+    const userID = localStorage.getItem("userId");
 
     if (!username) {
         document.getElementById("mensagem").innerText = "Usuário não autenticado. Faça login novamente.";
@@ -24,7 +25,7 @@ document.getElementById("fichaDnDForm").addEventListener("submit", function (eve
     };
 
     // Envia para a URL com o username
-    fetch(`http://localhost:8080/api/dnd/${username}`, {
+    fetch(`http://localhost:8080/api/dnd?userId=${userID}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

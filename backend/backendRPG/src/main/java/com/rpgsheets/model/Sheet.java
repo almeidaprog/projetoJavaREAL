@@ -1,14 +1,9 @@
 package com.rpgsheets.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.MappedSuperclass;
 
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
 public abstract class Sheet {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private String nomePersonagem;
     private String nomeDoJogador;
@@ -22,20 +17,7 @@ public abstract class Sheet {
     private int furtividade;
     private int intimidacao;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private User usuario;
-
-    // Getters e Setters (todos, inclusive do id e do usuário)
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    // Getters e Setters
     public String getNomePersonagem() {
         return nomePersonagem;
     }
@@ -106,13 +88,5 @@ public abstract class Sheet {
 
     public void setIntimidacao(int intimidacao) {
         this.intimidacao = intimidacao;
-    }
-
-    public User getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(User usuario) {
-        this.usuario = usuario;
     }
 }

@@ -15,7 +15,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     .then(response => response.text())
     .then(data => {
         if (data === "Login bem-sucedido!") {
-            localStorage.setItem("usuarioLogado", username);
+            localStorage.setItem("username", username);
             document.getElementById("mensagem").innerText = `Olá, ${username}! Você está logado.`;
             setTimeout(() => window.location.href = "index.html", 2000);
         } else {

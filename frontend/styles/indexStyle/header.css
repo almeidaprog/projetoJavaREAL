@@ -1,57 +1,74 @@
-body{
-    background-color: black;
-    color: white;
+body {
+  background-color: black;
+  color: white;
 }
 
-.header-class{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 20vh;
+.header-class {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
 }
 
-.header-presentation{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10rem;
-    width: 95vw;
-    height: 15vh;
-    background-color: var(--accent-clr);
+.header-presentation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  width: 95vw;
+  height: 15vh;
+  background-color: var(--accent-clr);
 }
 
-.login,.presentation{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 15vw;
-    height: 10vh;
+.presentation img {
+  height: 65vh;
+  margin-left: 30rem;
 }
+
+.login-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 33rem;
+  bottom: 1rem;
+  gap: 1rem;
+}
+
+.login-name{
+  font-size: 1.2rem;
+}
+
+.login,
+.presentation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  height: 10vh;
+}
+
 
 .login-btn {
-    
-    background-color: #4CAF50;
-    color: white; 
-    border: none;
-    padding: 12px 24px;
-    font-size: 18px; 
-    border-radius: 5px; 
-    text-decoration: none;
-    position: absolute;
-    top: 20px;
-    right: 110px;
-  }
-  
-  .login-btn:hover {
-    background-color: #45a049;
-    transform: scale(1.05); 
-  }
-  
-  .login-btn:active {
-    transform: scale(0.98); 
-    background-color: #3e8e41;
-  }
-  
-  .login a {
-    text-decoration: none; 
-  }
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+  background-color: #3e8e41;
+}
+
+.login a {
+  text-decoration: none;
+}
