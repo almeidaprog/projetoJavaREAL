@@ -16,8 +16,7 @@
                     <input type="text" id="nomePersonagem" required>
                 </div>
                 <div class="intro-atributo">
-
-
+                    
                     <div class="outro">
 
                         <label>ANTECEDENTE:</label>
@@ -52,28 +51,46 @@
         <div class="main-content">
             <form id="atributosPrincipais">
 
-                <label>Força:</label>
-                <input type="number" id="forca" required><br>
+                <div>
+                    <label>Força:</label>
+                    <input type="number" id="forca" required>
+                    <span id="modificador-forca"></span>
+                </div>
 
-                <label>Destreza:</label>
-                <input type="number" id="destreza" required><br>
+                <div>
+                    <label>Destreza:</label>
+                    <input type="number" id="destreza" required>
+                    <span id="modificador-destreza"></span>
+                </div>
 
-                <label>Constituição:</label>
-                <input type="number" id="constituicao" required><br>
+                <div>
+                    <label>Constituição:</label>
+                    <input type="number" id="constituicao" required>
+                    <span id="modificador-constituicao"></span>
+                </div>
+                <div>
+                    <label>Inteligência:</label>
+                    <input type="number" id="inteligencia" required>
+                    <span id="modificador-inteligencia"></span>
+                </div>
+                <div>
+                    <label>Sabedoria:</label>
+                    <input type="number" id="sabedoria" required>
+                    <span id="modificador-sabedoria"></span>
+                </div>
 
-                <label>Inteligência:</label>
-                <input type="number" id="inteligencia" required><br>
+                <div>
+                    <label>Carisma:</label>
+                    <input type="number" id="carisma" required>
+                    <span id="modificador-carisma"></span>
+                </div>
 
-                <label>Sabedoria:</label>
-                <input type="number" id="sabedoria" required><br>
-
-                <label>Carisma:</label>
-                <input type="number" id="carisma" required><br>
-
-                <form id="inspiracao">
+                <div>
                     <label>Inspiração:</label>
-                    <input type="number" id="inspiracao-id" required><br>
-                </form>
+                    <input type="number" id="inspiracao-id" required>
+                    <span id="modificador-inspiracao"></span>
+                </div>
+            
 
                 <form id="bonusDeProficiencia">
                     <label>Bônus de Proficiência:</label>
@@ -99,7 +116,7 @@
                     <label>Carisma:</label>
                     <input type="number" id="carisma" required><br>
 
-                </form>
+                </form> 
 
                 <form id="Pericias">
                     <label>Acrobacia:</label>
@@ -278,7 +295,7 @@
 
 
 
-    <div class="dnd-intro-2">
+    <!-- <div class="dnd-intro-2">
         <form id="intro-2">
             <div>
                 <label>Nome do Personagem:</label>
@@ -446,9 +463,9 @@
         <button type="submit">Criar Ficha</button>
         </form>
 
-        <p id="mensagem"></p>
+        <p id="mensagem"></p> -->
 
         <script src="./scripts/scripts_RPG/DnDCreateSheet.js"></script>
-</body>
+    </body>
 
 </html>
