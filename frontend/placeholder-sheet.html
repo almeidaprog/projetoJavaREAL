@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha</title>
+</head>
+<body>
+    <h1 id="titulo">Carregando ficha...</h1>
+    <div id="fichaContainer"></div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const sistema = params.get("sistema");
+        const id = params.get("id");
+
+        if (!sistema || !id) {
+            document.getElementById("fichaContainer").innerHTML = "<p>Parâmetros inválidos.</p>";
+        } else {
+            fetch(`/api/fichas/${sistema}/${id}`)
+                .then(resp => {
+                    if (!resp.ok) throw new Error("Erro ao buscar ficha");
+                    return resp.json();
+                })
+                .then(data => {
+                    document.getElementById("titulo").textContent = `Ficha de ${sistema.toUpperCase()}`;
+                    let html = "";
+
+                    for (let key in data) {
+                        if (key !== "id" && key !== "usuario") {
+                            html += `<p><strong>${key}:</strong> ${data[key]}</p>`;
+                        }
+                    }
+
+                    document.getElementById("fichaContainer").innerHTML = html;
+                })
+                .catch(err => {
+                    document.getElementById("fichaContainer").innerHTML = `<p>Erro: ${err.message}</p>`;
+                });
+        }
+    </script>
+</body>
+</html>
