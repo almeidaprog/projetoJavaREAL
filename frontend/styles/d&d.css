@@ -1,0 +1,192 @@
+<<<<<<< HEAD
+=======
+
+
+header {
+    padding: 10px;
+    font-family: 'Georgia', serif;
+    position: relative;
+    background-position: 20px 10px;
+}
+
+main {
+    padding: 10px;
+    font-family: 'Georgia', serif;
+    position: relative;
+    background-position: 20px 10px;
+}
+
+.dnd-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#intro {
+    display: flex;
+    flex-direction: column;
+}
+
+.nomeDoPersonagem {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.nomeDoPersonagem label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.nomeDoPersonagem input {
+    width: 100%;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.intro-atributo {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.outro, .outro2 {
+    flex: 1;
+    padding: 10px;
+}
+
+.outro label, .outro2 label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+.outro input, .outro2 input {
+    width: 100%;
+    padding: 5px;
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    margin-left: 5px;
+}
+
+.tudo{
+    background-color: red;
+}
+
+.mainDnD{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: row;
+    background-color: blue;
+    gap:5rem;
+}
+.main-content{
+    background-color: rgb(231, 10, 10);
+}
+
+header, main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.dnd-intro, .mainDnD {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nomeDoPersonagem {
+    flex: 1 1 100%;
+    border: 2px solid black;
+    padding: 10px;
+    background: #dde6f3;
+    font-weight: bold;
+}
+
+.intro-atributo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    flex: 1 1 100%;
+    background: #dde6f3;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.intro-atributo label {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+.intro-atributo input {
+    width: 100%;
+    padding: 3px;
+    border: 1px solid #999;
+    background: white;
+}
+
+.mainDnD {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainDnD input{
+    font-size: 30px;
+}
+
+#atributosPrincipais span{
+
+    font-size: 2.4rem;
+
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form {
+    background: #305c9a;
+    border: 2px solid black;
+    padding: 8px;
+    box-shadow: 2px 2px 0 #000;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 2px;
+}
+
+form input {
+    width: 50%;
+    padding: 4px;
+    margin-bottom: 6px;
+    background: #fff;
+    border: 1px solid #888;
+    font-family: monospace;
+}
+
+body {
+    font-size: 25px;
+    background-color: aqua;
+    font-family: 'Georgia', serif;
+}
+
+.separar1{
+    position: relative;
+    right:40px;
+}
+>>>>>>> f5d8caadcea6b59c88a35f2f4953e613c132a36c

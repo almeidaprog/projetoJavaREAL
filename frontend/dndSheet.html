@@ -6,6 +6,7 @@
     <!-- <link rel="stylesheet" href="./styles/fichaDnD.css"> -->
 </head>
 <body>
+<<<<<<< HEAD
     <h1>Criar Ficha D&D</h1>
     <form id="fichaDnDForm">
         <label>Nome do Personagem:</label>
@@ -16,6 +17,18 @@
 
         <label>Classe:</label>
         <input type="text" id="classe" required><br>
+=======
+    <header>
+        <div class="dnd-intro">
+            <form id="intro">
+                <div class="nomeDoPersonagem">
+                    <label>NOME DO PERSONAGEM:</label>
+                    <input type="text" id="nomePersonagem" required>
+                </div>
+                <div class="intro-atributo">
+                    
+                    <div class="outro">
+>>>>>>> f5d8caadcea6b59c88a35f2f4953e613c132a36c
 
         <label>Nível:</label>
         <input type="number" id="nivel" required><br>
@@ -38,14 +51,441 @@
         <label>Furtividade:</label>
         <input type="number" id="furtividade" required><br>
 
+<<<<<<< HEAD
         <label>Intimidação:</label>
         <input type="number" id="intimidacao" required><br><br>
+=======
+            </form>
+        </div>
+    </header>
+    <main class="mainDnD">
+        <div class="main-content">
+            <form id="atributosPrincipais">
+
+                <div>
+                    <label>Força:</label>
+                    <input type="number" id="forca" required>
+                    <span id="modificador-forca"></span>
+                </div>
+
+                <div>
+                    <label>Destreza:</label>
+                    <input type="number" id="destreza" required>
+                    <span id="modificador-destreza"></span>
+                </div>
+
+                <div>
+                    <label>Constituição:</label>
+                    <input type="number" id="constituicao" required>
+                    <span id="modificador-constituicao"></span>
+                </div>
+                <div>
+                    <label>Inteligência:</label>
+                    <input type="number" id="inteligencia" required>
+                    <span id="modificador-inteligencia"></span>
+                </div>
+                <div>
+                    <label>Sabedoria:</label>
+                    <input type="number" id="sabedoria" required>
+                    <span id="modificador-sabedoria"></span>
+                </div>
+
+                <div>
+                    <label>Carisma:</label>
+                    <input type="number" id="carisma" required>
+                    <span id="modificador-carisma"></span>
+                </div>
+
+                <div>
+                    <label>Inspiração:</label>
+                    <input type="number" id="inspiracao-id" required>
+                    <span id="modificador-inspiracao"></span>
+                </div>
+            
+
+                <form id="bonusDeProficiencia">
+                    <label>Bônus de Proficiência:</label>
+                    <input type="number" id="bonusDeProficiencia-id" required><br>
+                </form>
+
+                <form id="testeDeResistencia">
+                    <label>Força:</label>
+                    <input type="number" id="forca" required><br>
+
+                    <label>Destreza:</label>
+                    <input type="number" id="destreza" required><br>
+
+                    <label>Constituição:</label>
+                    <input type="number" id="constituicao" required><br>
+
+                    <label>Inteligência:</label>
+                    <input type="number" id="inteligencia" required><br>
+
+                    <label>Sabedoria:</label>
+                    <input type="number" id="sabedoria" required><br>
+
+                    <label>Carisma:</label>
+                    <input type="number" id="carisma" required><br>
+
+                </form> 
+
+                <form id="Pericias">
+                    <label>Acrobacia:</label>
+                    <input type="number" id="acrobacia" required><br>
+
+                    <label>Arcanismo:</label>
+                    <input type="number" id="arcanismo" required><br>
+
+                    <label>Atletismo:</label>
+                    <input type="number" id="atletismo" required><br>
+
+                    <label>Atuação:</label>
+                    <input type="number" id="atuacao" required><br>
+
+                    <label>Blefar:</label>
+                    <input type="number" id="blefar" required><br>
+
+                </form>
+                    
+                    <form id="separar1">
+                    <label>Furtividade:</label>
+                    <input type="number" id="furtividade" required><br>
+
+                    <label>História:</label>
+                    <input type="number" id="historia" required><br>
+
+                    <label>Intimidação:</label>
+                    <input type="number" id="intimidacao" required><br>
+
+                    <label>Intuição:</label>
+                    <input type="number" id="intuicao" required><br>
+
+                    <label>Investigação:</label>
+                    <input type="number" id="investigacao" required><br>
+
+                </form>
+
+                    <label>Lidar com animais:</label>
+                    <input type="number" id="lidarComAnimais" required><br>
+
+                    <label>Medicina:</label>
+                    <input type="number" id="medicina" required><br>
+
+                    <label>Natureza:</label>
+                    <input type="number" id="natureza" required><br>
+
+                    <label>Percepção:</label>
+                    <input type="number" id="percepcao" required><br>
+
+                    <label>Persuasão:</label>
+                    <input type="number" id="persuasao" required><br>
+
+                    <label>Prestidigitação:</label>
+                    <input type="number" id="prestidigitacao" required><br>
+
+                    <label>Religião:</label>
+                    <input type="number" id="religiao" required><br>
+
+                    <label>Sobrevivência:</label>
+                    <input type="number" id="sobrevivencia" required><br>
+                </form>
+
+                <form id="SabedoriaPassiva">
+                    <label>Sabedoria Passiva:</label>
+                    <input type="number" id="sabedoriaPassiva" required><br>
+                </form>
+
+                <form id="idiomasEOutrasProficiencias">
+                    <label>Idiomas e Outras Proficiências:</label>
+                    <input type="number" id="idiomasEOutrasProficiencias" required><br>
+                </form>
+
+        </div>
+
+        <div class="main-content">
+            <form id="classeDeArmadura">
+                <label>Classe de Armadura:</label>
+                <input type="number" id="ClasseDeArmadura-id" required><br>
+            </form>
+
+            <form id="iniciativa">
+                <label>Iniciativa:</label>
+                <input type="number" id="Inciativa-id" required><br>
+            </form>
+
+            <form id="deslocamento">
+                <label>Deslocamento:</label>
+                <input type="number" id="deslocamento-id" required><br>
+            </form>
+
+            <form id="pontosDeVidaAtuais">
+                <label>Pontos de Vida Totais:</label>
+                <input type="number" id="pontosDeVidaTotais" required><br>
+
+                <label>Pontos de Vida Atuais:</label>
+                <input type="number" id="pontosDeVidaAtuais-id" required><br>
+            </form>
+
+            <form id="PontosDeVidaTemporarios">
+                <label>Pontos de Vida Temporários:</label>
+                <input type="number" id="PontosDeVidaTemporarios-id">
+            </form>
+
+            <form id="TestesContraAMorte">
+                <label>Sucesso:</label>
+                <input type="number" id="sucesso-id">
+
+                <label>Fracasso:</label>
+                <input type="number" id="fracasso-id">
+            </form>
+            
+            <form id="AtaquesEMagias">
+                
+                <label>Nome:</label>
+                <input placeholder="separar por;" type="text" id="nome-id">
+                
+                <label>Bônus:</label>
+                <input placeholder="separar por;" type="number" id="bonus-id">
+                
+                <label>Dano/Tipo:</label>
+                <input placeholder="separar por;" type="text" id="danoTipo-id">
+                
+                
+            </form>
+            
+        </div>
+        <div class="main-content">
+
+        
+            <form id="equipamentos">
+                <label>Equipamentos:</label>
+                <input type="text" id="equpamentos-id">
+
+                <label>PC:</label>
+                <input type="number" id="pc">
+
+                <label>PP:</label>
+                <input type="number" id="pc">
+
+                <label>PE:</label>
+                <input type="number" id="pc">
+
+                <label>PO:</label>
+                <input type="number" id="pc">
+
+                <label>PL:</label>
+                <input type="number" id="pc">
+            </form>
+
+            <form id="tracosDePersonalidade">
+                <label>Traços de Personalidade:</label>
+                <input type="text" id="tracosDePersonalidade-id">
+            </form>
+
+            <form id="ideais">
+                <label>Ideais:</label>
+                <input type="text" id="ideais-id">
+            </form>
+
+            <form id="ligacoes">
+                <label>Ligações:</label>
+                <input type="text" id="ligacoes-id">
+            </form>
+
+            <form id="defeitos">
+                <label>Defeitos:</label>
+                <input type="text" id="defeitos-id">
+            </form>
+
+            <form id="caracteristicasEHabilidades">
+                <label>ABBABABABABABABAB Características e Habilidades:</label>
+                <input type="text" id="caracteristicasEHabilidades-id">
+            </form>
+        </div>
+    </main>
+
+
+
+    <!-- <div class="dnd-intro-2">
+        <form id="intro-2">
+            <div>
+                <label>Nome do Personagem:</label>
+                <input type="text" id="nomePersonagem" required><br>
+            </div>
+            <div class="intro-atributo">
+                <label>Idade:</label>
+                <input type="number" id="idade" required><br>
+
+                <label>Altura:</label>
+                <input type="number" id="altura" required><br>
+
+                <label>Peso:</label>
+                <input type="number" id="peso" required><br>
+
+                <label>Olhos:</label>
+                <input type="text" id="olhos" required><br>
+
+                <label>Pele:</label>
+                <input type="text" id="pele" required><br>
+
+                <label>Cabelos:</label>
+                <input type="text" id="cabelos" required><br>
+            </div>
+
+        </form>
+    </div>
+
+    <div>
+        <form id="aparenciaDoPersonagem">
+            <label>Aparência do Personagem:</label>
+            <input type="text" id="aparenciaDoPersonagem-id">
+        </form>
+
+        <form id="historiaDoPersonagem">
+            <label>História do Personagem:</label>
+            <input type="text" id="historiaDoPersonagem-id">
+        </form>
+    </div>
+
+    <div>
+        <form id="aliadosEOrganizacoes">
+            <label>Aliados e Organizações:</label>
+            <input type="text" id="aliadosEOrganizações-id">
+        </form>
+
+        <form id="outrasCaracteristicasEHabilidades">
+            <label>Outras Características e Habilidades:</label>
+            <input type="text" id="outrasCaracteristicasEHabilidades-id">
+        </form>
+
+        <form id="tesouro">
+            <label>BABAGVABBABABABABABA Tesouro:</label>
+            <input type="text" id="tesouro-id">
+        </form>
+
+
+    </div>
+
+    <div class="dnd-intro-3">
+        <form id="intro-3">
+            <div>
+                <label>Classe de Conjurador:</label>
+                <input type="text" id="classeDeConjurador" required><br>
+            </div>
+            <div class="intro-atributo">
+                <label>Habilidade Chave:</label>
+                <input type="text" id="habilidadeChave" required><br>
+
+                <label>CD do TR:</label>
+                <input type="number" id="cdDoTr" required><br>
+
+                <label>Bônus de Ataque:</label>
+                <input type="number" id="bonusDeAtaque" required><br>
+            </div>
+        </form>
+
+        <form id="truques">
+            <label>Truques:</label>
+            <input type="text" id="truques-id">
+        </form>
+
+        <form id="magiasNivel1">
+
+            <label>Mágias de Nível 1:</label>
+            <input placeholder="separar por;" type="text" id="magiasNivel1-id">
+            <label>Espaços Totais:</label>
+            <input type="number" id="espacosTotais">
+            <label>Espaços Usados:</label>
+            <input type="number" id="espacosUsados">
+        </form>
+
+        <form id="magiasNivel2">
+            <label>Mágias de Nível 2:</label>
+            <input placeholder="separar por;" type="text" id="magiasNivel2-id">
+            <label>Espaços Totais:</label>
+            <input type="number" id="espacosTotais">
+            <label>Espaços Usados:</label>
+            <input type="number" id="espacosUsados">
+        </form>
+
+        <form id="magiasNivel3">
+            <label>Mágias de Nível 3:</label>
+            <input placeholder="separar por;" type="text" id="magiasNivel3-id">
+            <label>Espaços Totais:</label>
+            <input type="number" id="espacosTotais">
+            <label>Espaços Usados:</label>
+            <input type="number" id="espacosUsados">
+        </form>
+
+        <form id="magiasNivel4">
+            <label>Mágias de Nível 4:</label>
+            <input placeholder="separar por;" type="text" id="magiasNivel4-id">
+            <label>Espaços Totais:</label>
+            <input type="number" id="espacosTotais">
+            <label>Espaços Usados:</label>
+            <input type="number" id="espacosUsados">
+        </form>
+
+        <form id="magiasNivel5">
+            <label>Mágias de Nível 5:</label>
+            <input placeholder="separar por;" type="text" id="magiasNivel5-id">
+            <label>Espaços Totais:</label>
+            <input type="number" id="espacosTotais">
+            <label>Espaços Usados:</label>
+            <input type="number" id="espacosUsados">
+        </form>
+
+        <form id="magiasNivel6">
+            <label>Mágias de Nível 6:</label>
+            <input placeholder="separar por;" type="text" id="magiasNivel6-id">
+            <label>Espaços Totais:</label>
+            <input type="number" id="espacosTotais">
+            <label>Espaços Usados:</label>
+            <input type="number" id="espacosUsados">
+        </form>
+
+        <form id="magiasNivel7">
+            <label>Mágias de Nível 7:</label>
+            <input placeholder="separar por;" type="text" id="magiasNivel7-id">
+            <label>Espaços Totais:</label>
+            <input type="number" id="espacosTotais">
+            <label>Espaços Usados:</label>
+            <input type="number" id="espacosUsados">
+        </form>
+
+        <form id="magiasNivel8">
+            <label>Mágias de Nível 8:</label>
+            <input placeholder="separar por;" type="text" id="magiasNivel8-id">
+            <label>Espaços Totais:</label>
+            <input type="number" id="espacosTotais">
+            <label>Espaços Usados:</label>
+            <input type="number" id="espacosUsados">
+        </form>
+
+        <form id="magiasNivel9">
+            <label>Mágias de Nível 9:</label>
+            <input placeholder="separar por;" type="text" id="magiasNivel9-id">
+            <label>Espaços Totais:</label>
+            <input type="number" id="espacosTotais">
+            <label>Espaços Usados:</label>
+            <input type="number" id="espacosUsados">
+        </form>
+>>>>>>> f5d8caadcea6b59c88a35f2f4953e613c132a36c
 
         <button type="submit">Criar Ficha</button>
     </form>
 
+<<<<<<< HEAD
     <p id="mensagem"></p>
 
     <script src="./scripts/scripts_RPG/DnDCreateSheet.js"></script>
 </body>
 </html>
+=======
+        <p id="mensagem"></p> -->
+
+        <script src="./scripts/scripts_RPG/DnDCreateSheet.js"></script>
+    </body>
+
+</html>
+>>>>>>> f5d8caadcea6b59c88a35f2f4953e613c132a36c
