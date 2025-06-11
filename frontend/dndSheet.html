@@ -1,417 +1,397 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Ficha de Personagem D&D</title>
-    <link href="./styles/d&d.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .pericias input[type="checkbox"] {
-            appearance: none;
-            -webkit-appearance: none;
-            width: 15px;
-            height: 15px;
-            border: 1px solid #000;
-            background-color: white;
-            cursor: pointer;
-            position: relative;
-        }
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ficha de Personagem D&D</title>
+        <link href="./styles/d&d.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            .pericias input[type="checkbox"] {
+                appearance: none;
+                -webkit-appearance: none;
+                width: 15px;
+                height: 15px;
+                border: 1px solid #000;
+                background-color: white;
+                cursor: pointer;
+                position: relative;
+            }
 
-        .pericias input[type="checkbox"]:checked {
-            background-color: white;
-        }
+            .pericias input[type="checkbox"]:checked {
+                background-color: white;
+            }
 
-        .pericias input[type="checkbox"]:checked::after {
-            content: "X";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: black;
-            font-weight: bold;
-            font-size: 12px;
-        }
+            .pericias input[type="checkbox"]:checked::after {
+                content: "X";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: black;
+                font-weight: bold;
+                font-size: 12px;
+            }
 
-        .pericia-valor {
-            width: 40px;
-            height: 20px;
-            text-align: center;
-            margin: 0 5px;
-            padding: 2px;
-            border: 1px solid #000;
-            font-size: 14px;
-        }
+            .pericia-valor {
+                width: 40px;
+                height: 20px;
+                text-align: center;
+                margin: 0 5px;
+                padding: 2px;
+                border: 1px solid #000;
+                font-size: 14px;
+            }
 
-        .pericia-item {
-            display: flex;
-            align-items: center;
-            margin: 2px 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="background-container">
-        <img src="assets/imgdegente/fundo.png" alt="Fundo RPG" class="background-image">
-    </div>
-    <div class="ficha-background-container">
-        <div class="titulo-pagina">
-            <div style="display: flex; align-items: center; justify-content: center;">
-                <img src="assets/imgdegente/dnd.png" alt="Logo D&D" class="logo-dnd">
-                <h1>Ficha de Personagem</h1>
-            </div>
+            .pericia-item {
+                display: flex;
+                align-items: center;
+                margin: 2px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="background-container">
+            <img src="assets/imgdegente/fundo.png" alt="Fundo RPG" class="background-image">
         </div>
-        <div class="ficha-dnd-main">
-            <div class="ficha-header">
-                <div class="header-row">
-                    <div class="header-block nome-personagem">
-                        <label>Nome do Personagem</label>
-                        <input type="text" id="nomePersonagem">
-                    </div>
-                    <div class="header-block classe-nivel">
-                        <label>Classe & Nível</label>
-                        <input type="text" id="classeNivel">
-                    </div>
-                    <div class="header-block antecedente">
-                        <label>Antecedente</label>
-                        <input type="text" id="antecedente">
-                    </div>
-                    <div class="header-block nome-jogador">
-                        <label>Nome do Jogador</label>
-                        <input type="text" id="nomeJogador">
-                    </div>
-                </div>
-                <div class="header-row">
-                    <div class="header-block raca">
-                        <label>Raça</label>
-                        <input type="text" id="raca">
-                    </div>
-                    <div class="header-block tendencia">
-                        <label>Tendência</label>
-                        <input type="text" id="tendencia">
-                    </div>
-                    <div class="header-block xp">
-                        <label>Pontos de Experiência</label>
-                        <input type="number" id="xp">
-                    </div>
+        <div class="ficha-background-container">
+            <div class="titulo-pagina">
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/imgdegente/dnd.png" alt="Logo D&D" class="logo-dnd">
+                    <h1>Ficha de Personagem</h1>
                 </div>
             </div>
-            <div class="ficha-body">
-                <div class="coluna-esquerda">
-                    <div class="atributos-circulos">
-                        <div class="atributo-circulo-block">
-                            <label>Força</label>
-                            <input type="number" id="forca">
-                            <span class="modificador" id="modificador-forca"></span>
+            <div id="mensagem" style="text-align: center; margin: 10px 0; padding: 10px; border-radius: 5px;"></div>
+            <form id="fichaDnDForm">
+            <div class="ficha-dnd-main">
+                <div class="ficha-header">
+                    <div class="header-row">
+                        <div class="header-block nome-personagem">
+                            <label>Nome do Personagem</label>
+                            <input type="text" id="nomePersonagem">
                         </div>
-                        <div class="atributo-circulo-block destreza-circulo">
-                            <label>Destreza</label>
-                            <input type="number" id="destreza">
-                            <span class="modificador" id="modificador-destreza"></span>
+                        <div class="header-block classe">
+                            <label>Classe</label>
+                            <input type="text" id="classe">
                         </div>
-                        <div class="atributo-circulo-block constituicao-circulo">
-                            <label>Constituição</label>
-                            <input type="number" id="constituicao">
-                            <span class="modificador" id="modificador-constituicao"></span>
+                        <div class="header-block nivel">
+                            <label>Nível</label>
+                            <input type="text" id="nivel">
                         </div>
-                        <div class="atributo-circulo-block inteligencia-circulo">
-                            <label>Inteligência</label>
-                            <input type="number" id="inteligencia">
-                            <span class="modificador" id="modificador-inteligencia"></span>
+                        <div class="header-block antecedente">
+                            <label>Antecedente</label>
+                            <input type="text" id="antecedente">
                         </div>
-                        <div class="atributo-circulo-block sabedoria-circulo">
-                            <label>Sabedoria</label>
-                            <input type="number" id="sabedoria">
-                            <span class="modificador" id="modificador-sabedoria"></span>
-                        </div>
-                        <div class="atributo-circulo-block">
-                            <label>Carisma</label>
-                            <input type="number" id="carisma">
-                            <span class="modificador" id="modificador-carisma"></span>
+                        <div class="header-block nome-jogador">
+                            <label>Nome do Jogador</label>
+                            <input type="text" id="nomeJogador">
                         </div>
                     </div>
-                    <div class="bonus-proficiencia">
-                        <label>Bônus de Proficiência</label>
-                        <input type="number" id="bonusProficiencia">
-                    </div>
-                    <fieldset class="testes-resistencia">
-                        <legend>Testes de Resistência</legend>
-                        <div class="teste-item">
-                            <input type="checkbox" id="forca-teste-checkbox">
-                            <input type="text" class="teste-valor" id="forca-teste-valor">
-                            <label for="forca-teste-checkbox">Força</label>
+                    <div class="header-row">
+                        <div class="header-block raca">
+                            <label>Raça</label>
+                            <input type="text" id="raca">
                         </div>
-                        <div class="teste-item">
-                            <input type="checkbox" id="destreza-teste-checkbox">
-                            <input type="text" class="teste-valor" id="destreza-teste-valor">
-                            <label for="destreza-teste-checkbox">Destreza</label>
+                        <div class="header-block tendencia">
+                            <label>Tendência</label>
+                            <input type="text" id="tendencia">
                         </div>
-                        <div class="teste-item">
-                            <input type="checkbox" id="constituicao-teste-checkbox">
-                            <input type="text" class="teste-valor" id="constituicao-teste-valor">
-                            <label for="constituicao-teste-checkbox">Constituição</label>
+                        <div class="header-block xp">
+                            <label>Pontos de Experiência</label>
+                            <input type="number" id="xp">
                         </div>
-                        <div class="teste-item">
-                            <input type="checkbox" id="inteligencia-teste-checkbox">
-                            <input type="text" class="teste-valor" id="inteligencia-teste-valor">
-                            <label for="inteligencia-teste-checkbox">Inteligência</label>
-                        </div>
-                        <div class="teste-item">
-                            <input type="checkbox" id="sabedoria-teste-checkbox">
-                            <input type="text" class="teste-valor" id="sabedoria-teste-valor">
-                            <label for="sabedoria-teste-checkbox">Sabedoria</label>
-                        </div>
-                        <div class="teste-item">
-                            <input type="checkbox" id="carisma-teste-checkbox">
-                            <input type="text" class="teste-valor" id="carisma-teste-valor">
-                            <label for="carisma-teste-checkbox">Carisma</label>
-                        </div>
-                    </fieldset>
-                    <fieldset class="pericias">
-                        <legend>Perícias</legend>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="acrobacia-checkbox">
-                            <input type="text" class="pericia-valor" id="acrobacia-valor">
-                            <label for="acrobacia-checkbox">Acrobacia (Des)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="arcanismo-checkbox">
-                            <input type="text" class="pericia-valor" id="arcanismo-valor">
-                            <label for="arcanismo-checkbox">Arcanismo (Int)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="atletismo-checkbox">
-                            <input type="text" class="pericia-valor" id="atletismo-valor">
-                            <label for="atletismo-checkbox">Atletismo (For)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="atuacao-checkbox">
-                            <input type="text" class="pericia-valor" id="atuacao-valor">
-                            <label for="atuacao-checkbox">Atuação (Car)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="blefar-checkbox">
-                            <input type="text" class="pericia-valor" id="blefar-valor">
-                            <label for="blefar-checkbox">Blefar (Car)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="furtividade-checkbox">
-                            <input type="text" class="pericia-valor" id="furtividade-valor">
-                            <label for="furtividade-checkbox">Furtividade (Des)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="historia-checkbox">
-                            <input type="text" class="pericia-valor" id="historia-valor">
-                            <label for="historia-checkbox">História (Int)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="intimidacao-checkbox">
-                            <input type="text" class="pericia-valor" id="intimidacao-valor">
-                            <label for="intimidacao-checkbox">Intimidação (Car)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="intuicao-checkbox">
-                            <input type="text" class="pericia-valor" id="intuicao-valor">
-                            <label for="intuicao-checkbox">Intuição (Sab)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="investigacao-checkbox">
-                            <input type="text" class="pericia-valor" id="investigacao-valor">
-                            <label for="investigacao-checkbox">Investigação (Int)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="lidarComAnimais-checkbox">
-                            <input type="text" class="pericia-valor" id="lidarComAnimais-valor">
-                            <label for="lidarComAnimais-checkbox">Lidar com Animais (Sab)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="medicina-checkbox">
-                            <input type="text" class="pericia-valor" id="medicina-valor">
-                            <label for="medicina-checkbox">Medicina (Sab)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="natureza-checkbox">
-                            <input type="text" class="pericia-valor" id="natureza-valor">
-                            <label for="natureza-checkbox">Natureza (Int)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="percepcao-checkbox">
-                            <input type="text" class="pericia-valor" id="percepcao-valor">
-                            <label for="percepcao-checkbox">Percepção (Sab)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="persuasao-checkbox">
-                            <input type="text" class="pericia-valor" id="persuasao-valor">
-                            <label for="persuasao-checkbox">Persuasão (Car)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="prestidigitacao-checkbox">
-                            <input type="text" class="pericia-valor" id="prestidigitacao-valor">
-                            <label for="prestidigitacao-checkbox">Prestidigitação (Des)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="religiao-checkbox">
-                            <input type="text" class="pericia-valor" id="religiao-valor">
-                            <label for="religiao-checkbox">Religião (Int)</label>
-                        </div>
-                        <div class="pericia-item">
-                            <input type="checkbox" id="sobrevivencia-checkbox">
-                            <input type="text" class="pericia-valor" id="sobrevivencia-valor">
-                            <label for="sobrevivencia-checkbox">Sobrevivência (Sab)</label>
-                        </div>
-                    </fieldset>
-                    <div class="sabedoria-passiva">
-                        <label for="sabedoriaPassiva">Sabedoria Passiva (Percepção):</label>
-                        <input type="number" id="sabedoriaPassiva">
                     </div>
                 </div>
-                <div class="coluna-central">
-                    <div class="blocos-centrais">
-                        <div class="mini-bloco">
-                            <label for="classeArmadura">Classe Armadura</label>
-                            <input type="text" id="classeArmadura">
+                <div class="ficha-body">
+                    <div class="coluna-esquerda">
+                        <div class="atributos-circulos">
+                            <div class="atributo-circulo-block">
+                                <label>Força</label>
+                                <input type="number" id="forca">
+                                <span class="modificador" id="modificador-forca"></span>
+                            </div>
+                            <div class="atributo-circulo-block destreza-circulo">
+                                <label>Destreza</label>
+                                <input type="number" id="destreza">
+                                <span class="modificador" id="modificador-destreza"></span>
+                            </div>
+                            <div class="atributo-circulo-block constituicao-circulo">
+                                <label>Constituição</label>
+                                <input type="number" id="constituicao">
+                                <span class="modificador" id="modificador-constituicao"></span>
+                            </div>
+                            <div class="atributo-circulo-block inteligencia-circulo">
+                                <label>Inteligência</label>
+                                <input type="number" id="inteligencia">
+                                <span class="modificador" id="modificador-inteligencia"></span>
+                            </div>
+                            <div class="atributo-circulo-block sabedoria-circulo">
+                                <label>Sabedoria</label>
+                                <input type="number" id="sabedoria">
+                                <span class="modificador" id="modificador-sabedoria"></span>
+                            </div>
+                            <div class="atributo-circulo-block">
+                                <label>Carisma</label>
+                                <input type="number" id="carisma">
+                                <span class="modificador" id="modificador-carisma"></span>
+                            </div>
                         </div>
-                        <div class="mini-bloco">
-                            <label for="iniciativa">Iniciativa</label>
-                            <input type="text" id="iniciativa">
+                        <div class="bonus-proficiencia">
+                            <label>Bônus de Proficiência</label>
+                            <input type="number" id="bonusProficiencia">
                         </div>
-                        <div class="mini-bloco" for="deslocamento">
-                            <label for="deslocamento">Deslocamento</label>
-                            <input type="text" id="deslocamento">
+                        <fieldset class="testes-resistencia">
+                            <legend>Testes de Resistência</legend>
+                            <div class="teste-item">
+                                <input type="checkbox" id="forca-teste-checkbox">
+                                <input type="text" class="teste-valor" id="forca-teste-valor">
+                                <label for="forca-teste-checkbox">Força</label>
+                            </div>
+                            <div class="teste-item">
+                                <input type="checkbox" id="destreza-teste-checkbox">
+                                <input type="text" class="teste-valor" id="destreza-teste-valor">
+                                <label for="destreza-teste-checkbox">Destreza</label>
+                            </div>
+                            <div class="teste-item">
+                                <input type="checkbox" id="constituicao-teste-checkbox">
+                                <input type="text" class="teste-valor" id="constituicao-teste-valor">
+                                <label for="constituicao-teste-checkbox">Constituição</label>
+                            </div>
+                            <div class="teste-item">
+                                <input type="checkbox" id="inteligencia-teste-checkbox">
+                                <input type="text" class="teste-valor" id="inteligencia-teste-valor">
+                                <label for="inteligencia-teste-checkbox">Inteligência</label>
+                            </div>
+                            <div class="teste-item">
+                                <input type="checkbox" id="sabedoria-teste-checkbox">
+                                <input type="text" class="teste-valor" id="sabedoria-teste-valor">
+                                <label for="sabedoria-teste-checkbox">Sabedoria</label>
+                            </div>
+                            <div class="teste-item">
+                                <input type="checkbox" id="carisma-teste-checkbox">
+                                <input type="text" class="teste-valor" id="carisma-teste-valor">
+                                <label for="carisma-teste-checkbox">Carisma</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="pericias">
+                            <legend>Perícias</legend>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="acrobacia-checkbox">
+                                <input type="text" class="pericia-valor" id="acrobacia-valor">
+                                <label for="acrobacia-checkbox">Acrobacia (Des)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="arcanismo-checkbox">
+                                <input type="text" class="pericia-valor" id="arcanismo-valor">
+                                <label for="arcanismo-checkbox">Arcanismo (Int)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="atletismo-checkbox">
+                                <input type="text" class="pericia-valor" id="atletismo-valor">
+                                <label for="atletismo-checkbox">Atletismo (For)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="atuacao-checkbox">
+                                <input type="text" class="pericia-valor" id="atuacao-valor">
+                                <label for="atuacao-checkbox">Atuação (Car)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="blefar-checkbox">
+                                <input type="text" class="pericia-valor" id="blefar-valor">
+                                <label for="blefar-checkbox">Blefar (Car)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="furtividade-checkbox">
+                                <input type="text" class="pericia-valor" id="furtividade-valor">
+                                <label for="furtividade-checkbox">Furtividade (Des)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="historia-checkbox">
+                                <input type="text" class="pericia-valor" id="historia-valor">
+                                <label for="historia-checkbox">História (Int)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="intimidacao-checkbox">
+                                <input type="text" class="pericia-valor" id="intimidacao-valor">
+                                <label for="intimidacao-checkbox">Intimidação (Car)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="intuicao-checkbox">
+                                <input type="text" class="pericia-valor" id="intuicao-valor">
+                                <label for="intuicao-checkbox">Intuição (Sab)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="investigacao-checkbox">
+                                <input type="text" class="pericia-valor" id="investigacao-valor">
+                                <label for="investigacao-checkbox">Investigação (Int)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="lidarComAnimais-checkbox">
+                                <input type="text" class="pericia-valor" id="lidarComAnimais-valor">
+                                <label for="lidarComAnimais-checkbox">Lidar com Animais (Sab)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="medicina-checkbox">
+                                <input type="text" class="pericia-valor" id="medicina-valor">
+                                <label for="medicina-checkbox">Medicina (Sab)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="natureza-checkbox">
+                                <input type="text" class="pericia-valor" id="natureza-valor">
+                                <label for="natureza-checkbox">Natureza (Int)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="percepcao-checkbox">
+                                <input type="text" class="pericia-valor" id="percepcao-valor">
+                                <label for="percepcao-checkbox">Percepção (Sab)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="persuasao-checkbox">
+                                <input type="text" class="pericia-valor" id="persuasao-valor">
+                                <label for="persuasao-checkbox">Persuasão (Car)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="prestidigitacao-checkbox">
+                                <input type="text" class="pericia-valor" id="prestidigitacao-valor">
+                                <label for="prestidigitacao-checkbox">Prestidigitação (Des)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="religiao-checkbox">
+                                <input type="text" class="pericia-valor" id="religiao-valor">
+                                <label for="religiao-checkbox">Religião (Int)</label>
+                            </div>
+                            <div class="pericia-item">
+                                <input type="checkbox" id="sobrevivencia-checkbox">
+                                <input type="text" class="pericia-valor" id="sobrevivencia-valor">
+                                <label for="sobrevivencia-checkbox">Sobrevivência (Sab)</label>
+                            </div>
+                        </fieldset>
+                        <div class="sabedoria-passiva">
+                            <label for="sabedoriaPassiva">Sabedoria Passiva (Percepção):</label>
+                            <input type="number" id="sabedoriaPassiva">
                         </div>
                     </div>
-                    <div class="pv-bloco">
-                        <label for="pvTotais">PV Totais</label>
-                        <input type="number" id="pvTotais">
-                        <label for="pvAtuais">Pontos de Vida Atuais</label>
-                        <input type="number" id="pvAtuais">
-                        <label for="pvTemporarios">Pontos de Vida Temporários</label>
-                        <input type="number" id="pvTemporarios">
-                    </div>
-                    <div class="dados-vida-bloco">
-                        <label for="dadosVida">Dados de Vida</label>
-                        <input type="text" id="dadosVida">
-                    </div>
-                    <div class="testes-morte-bloco">
-                        <label>Testes Contra a Morte</label>
-                        <div class="testes-morte-sucessos">
-                            <span>Sucessos:</span>
-                            <input type="checkbox" class="morte-checkbox" id="sucesso1">
-                            <input type="checkbox" class="morte-checkbox" id="sucesso2">
-                            <input type="checkbox" class="morte-checkbox" id="sucesso3">
+                    <div class="coluna-central">
+                        <div class="blocos-centrais">
+                            <div class="mini-bloco">
+                                <label for="classeArmadura">Classe Armadura</label>
+                                <input type="text" id="classeArmadura">
+                            </div>
+                            <div class="mini-bloco">
+                                <label for="iniciativa">Iniciativa</label>
+                                <input type="text" id="iniciativa">
+                            </div>
+                            <div class="mini-bloco" for="deslocamento">
+                                <label for="deslocamento">Deslocamento</label>
+                                <input type="text" id="deslocamento">
+                            </div>
                         </div>
-                        <div class="testes-morte-fracassos">
-                            <span>Fracassos:</span>
-                            <input type="checkbox" class="morte-checkbox" id="fracasso1">
-                            <input type="checkbox" class="morte-checkbox" id="fracasso2">
-                            <input type="checkbox" class="morte-checkbox" id="fracasso3">
+                        <div class="pv-bloco">
+                            <label for="pvTotais">PV Totais</label>
+                            <input type="number" id="pvTotais">
+                            <label for="pvAtuais">Pontos de Vida Atuais</label>
+                            <input type="number" id="pvAtuais">
+                            <label for="pvTemporarios">Pontos de Vida Temporários</label>
+                            <input type="number" id="pvTemporarios">
                         </div>
+                        <div class="dados-vida-bloco">
+                            <label for="dadosVida">Dados de Vida</label>
+                            <input type="text" id="dadosVida">
+                        </div>
+                        <div class="testes-morte-bloco">
+                            <label>Testes Contra a Morte</label>
+                            <div class="testes-morte-sucessos">
+                                <span>Sucessos:</span>
+                                <input type="checkbox" class="morte-checkbox" id="sucesso1">
+                                <input type="checkbox" class="morte-checkbox" id="sucesso2">
+                                <input type="checkbox" class="morte-checkbox" id="sucesso3">
+                            </div>
+                            <div class="testes-morte-fracassos">
+                                <span>Fracassos:</span>
+                                <input type="checkbox" class="morte-checkbox" id="fracasso1">
+                                <input type="checkbox" class="morte-checkbox" id="fracasso2">
+                                <input type="checkbox" class="morte-checkbox" id="fracasso3">
+                            </div>
+                        </div>
+                        <fieldset class="ataques-magias">
+                            <legend>Ataques e Magias</legend>
+                            <table class="tabela-ataques">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Bônus</th>
+                                        <th>Dano/Tipo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" class="ataque-nome"></td>
+                                        <td><input type="text" class="ataque-bonus"></td>
+                                        <td><input type="text" class="ataque-dano"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="ataque-nome"></td>
+                                        <td><input type="text" class="ataque-bonus"></td>
+                                        <td><input type="text" class="ataque-dano"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="ataque-nome"></td>
+                                        <td><input type="text" class="ataque-bonus"></td>
+                                        <td><input type="text" class="ataque-dano"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="ataque-nome"></td>
+                                        <td><input type="text" class="ataque-bonus"></td>
+                                        <td><input type="text" class="ataque-dano"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </fieldset>
                     </div>
-                    <fieldset class="ataques-magias">
-                        <legend>Ataques e Magias</legend>
-                        <table class="tabela-ataques">
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Bônus</th>
-                                    <th>Dano/Tipo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input type="text" class="ataque-nome"></td>
-                                    <td><input type="text" class="ataque-bonus"></td>
-                                    <td><input type="text" class="ataque-dano"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="ataque-nome"></td>
-                                    <td><input type="text" class="ataque-bonus"></td>
-                                    <td><input type="text" class="ataque-dano"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="ataque-nome"></td>
-                                    <td><input type="text" class="ataque-bonus"></td>
-                                    <td><input type="text" class="ataque-dano"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="ataque-nome"></td>
-                                    <td><input type="text" class="ataque-bonus"></td>
-                                    <td><input type="text" class="ataque-dano"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </fieldset>
+                    <div class="coluna-direita">
+                        <fieldset class="tracos-personalidade">
+                            <legend>Traços de Personalidade</legend>
+                            <textarea id="tracosDePersonalidade"></textarea>
+                        </fieldset>
+                        <fieldset class="ideais">
+                            <legend>Ideais</legend>
+                            <textarea id="ideais"></textarea>
+                        </fieldset>
+                        <fieldset class="ligacoes">
+                            <legend>Ligações</legend>
+                            <textarea id="ligacoes"></textarea>
+                        </fieldset>
+                        <fieldset class="defeitos">
+                            <legend>Defeitos</legend>
+                            <textarea id="defeitos"></textarea>
+                        </fieldset>
+                        <fieldset class="caracteristicas-habilidades">
+                            <legend>Características e Habilidades</legend>
+                            <textarea id="caracteristicasEHabilidades"></textarea>
+                        </fieldset>
+                    </div>
                 </div>
-                <div class="coluna-direita">
-                    <fieldset class="tracos-personalidade">
-                        <legend>Traços de Personalidade</legend>
-                        <textarea id="tracosDePersonalidade"></textarea>
+                <div class="ficha-rodape">
+                    <fieldset class="idiomas-proficiencias">
+                        <legend>Idiomas e Outras Proficiências</legend>
+                        <textarea id="idiomasEOutrasProficiencias"></textarea>
                     </fieldset>
-                    <fieldset class="ideais">
-                        <legend>Ideais</legend>
-                        <textarea id="ideais"></textarea>
-                    </fieldset>
-                    <fieldset class="ligacoes">
-                        <legend>Ligações</legend>
-                        <textarea id="ligacoes"></textarea>
-                    </fieldset>
-                    <fieldset class="defeitos">
-                        <legend>Defeitos</legend>
-                        <textarea id="defeitos"></textarea>
-                    </fieldset>
-                    <fieldset class="caracteristicas-habilidades">
-                        <legend>Características e Habilidades</legend>
-                        <textarea id="caracteristicasEHabilidades"></textarea>
+                    <fieldset class="equipamentos">
+                        <legend>Equipamentos</legend>
+                        <textarea id="equipamentosLista"></textarea>
+                        <div class="moedas">
+                            <label for="pc">PC</label><input type="number" id="pc">
+                            <label for="pp">PP</label><input type="number" id="pp">
+                            <label for="pe">PE</label><input type="number" id="pe">
+                            <label for="po">PO</label><input type="number" id="po">
+                            <label for="pl">PL</label><input type="number" id="pl">
+                        </div>
                     </fieldset>
                 </div>
             </div>
-            <div class="ficha-rodape">
-                <fieldset class="idiomas-proficiencias">
-                    <legend>Idiomas e Outras Proficiências</legend>
-                    <textarea id="idiomasEOutrasProficiencias"></textarea>
-                </fieldset>
-                <fieldset class="equipamentos">
-                    <legend>Equipamentos</legend>
-                    <textarea id="equipamentosLista"></textarea>
-                    <div class="moedas">
-                        <label for="pc">PC</label><input type="number" id="pc">
-                        <label for="pp">PP</label><input type="number" id="pp">
-                        <label for="pe">PE</label><input type="number" id="pe">
-                        <label for="po">PO</label><input type="number" id="po">
-                        <label for="pl">PL</label><input type="number" id="pl">
-                    </div>
-                </fieldset>
-            </div>
+            <button type="submit"> criar ficha
+            </button>
+            </form>
         </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Seleciona todos os checkboxes de perícias
-            const checkboxesPericias = document.querySelectorAll('.pericias input[type="checkbox"]');
-            
-            // Adiciona evento de clique para cada checkbox
-            checkboxesPericias.forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    // Atualiza o valor do campo de texto correspondente
-                    const valorInput = this.parentElement.querySelector('.pericia-valor');
-                    const valorDigitado = parseInt(valorInput.value) || 0;
-                    
-                    if (this.checked) {
-                        valorInput.value = valorDigitado + 2; // Soma o valor digitado com +2
-                    } else {
-                        valorInput.value = valorDigitado - 2; // Subtrai o +2 do valor digitado
-                    }
-                });
-
-                // Adiciona evento de input para o campo de valor
-                const valorInput = checkbox.parentElement.querySelector('.pericia-valor');
-                valorInput.addEventListener('input', function() {
-                    const valorDigitado = parseInt(this.value) || 0;
-                    if (checkbox.checked) {
-                        this.value = valorDigitado + 2; // Mantém o +2 somado ao valor digitado
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+        <script src="./scripts/scripts_RPG/DnDCreateSheet.js"></script>
+    </body>
+    </html>
