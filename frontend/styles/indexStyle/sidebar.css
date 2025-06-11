@@ -8,10 +8,10 @@
 }
 
 #sidebar{
-    font-size: 30px;
+    font-size: 22px;
     box-sizing: border-box;
     height: 100vh;
-    width: 550px;
+    width: 365px;
     padding: 5px 1em;
     background-color: var(--base-clr);
     border: 2px solid rgb(16, 2, 2);
