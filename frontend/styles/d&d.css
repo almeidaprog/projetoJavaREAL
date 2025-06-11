@@ -26,9 +26,31 @@ body {
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .titulo-pagina {
@@ -88,12 +110,13 @@ body {
 .ficha-body {
     display: flex;
     flex-direction: row;
-    gap: 28px;
+    gap: 80px;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
     max-width: 1300px;
     box-sizing: border-box;
+    padding: 0 40px;
 }
 .coluna-esquerda {
     flex-basis: 220px;
@@ -112,6 +135,8 @@ body {
     margin-left: 0;
     padding: 0;
     overflow: visible;
+    position: relative;
+    z-index: 2;
 }
 .coluna-direita {
     flex-basis: 260px;
@@ -119,6 +144,9 @@ body {
     max-width: 300px;
     flex-shrink: 0;
     overflow: visible;
+    position: relative;
+    z-index: 1;
+    margin-left: 40px;
 }
 
 .atributos-circulos {
@@ -128,12 +156,12 @@ body {
     align-items: center;
 }
 .atributo-circulo-block {
+    width: 84px;
+    height: 84px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 84px;
-    height: 84px;
     border: 3px double var(--cor-moldura);
     border-radius: 50%;
     background: #eaeaff;
@@ -144,25 +172,25 @@ body {
     transition: box-shadow 0.2s;
 }
 .atributo-circulo-block label {
-    font-size: 13px;
+    font-size: 11px;
     margin-bottom: 2px;
     font-weight: bold;
     text-transform: uppercase;
     color: var(--cor-accent-dark);
+    text-align: center;
+    white-space: nowrap;
 }
 .atributo-circulo-block input {
     width: 38px;
     height: 38px;
-    font-size: 22px;
     text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
     border-radius: 8px;
     border: 1.5px solid var(--cor-moldura);
     background: #fff;
-    font-weight: bold;
-    color: #222;
     box-shadow: 0 1px 2px #eee;
-    outline: none;
-    transition: border 0.2s;
 }
 .atributo-circulo-block input:focus {
     border-color: var(--cor-accent-dark);
@@ -180,6 +208,38 @@ body {
     border: 1.5px solid var(--cor-moldura);
     color: var(--cor-accent-dark);
     font-weight: bold;
+}
+
+/* Regra específica para o círculo de constituição */
+.constituicao-circulo label {
+    font-size: 11px;
+    transform: scale(0.6);
+    transform-origin: center;
+    margin-bottom: 4px;
+}
+
+/* Regra específica para o círculo de inteligência */
+.inteligencia-circulo label {
+    font-size: 11px;
+    transform: scale(0.6);
+    transform-origin: center;
+    margin-bottom: 4px;
+}
+
+/* Regra específica para o círculo de sabedoria */
+.sabedoria-circulo label {
+    font-size: 11px;
+    transform: scale(0.8);
+    transform-origin: center;
+    margin-bottom: 4px;
+}
+
+/* Regra específica para o círculo de destreza */
+.destreza-circulo label {
+    font-size: 11px;
+    transform: scale(0.9);
+    transform-origin: center;
+    margin-bottom: 4px;
 }
 
 .bonus-proficiencia {
@@ -320,11 +380,13 @@ legend {
     justify-content: center;
     align-items: flex-start;
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 .mini-bloco {
-    width: 120px;
-    min-width: 120px;
-    max-width: 120px;
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
     min-height: 90px;
     border-radius: 16px 16px 12px 12px/40px 40px 12px 12px;
     border: 3px solid #222;
@@ -334,20 +396,27 @@ legend {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8px 6px 8px 6px;
+    padding: 12px 8px;
     box-sizing: border-box;
     position: relative;
     margin: 0;
+    z-index: 2;
 }
 .mini-bloco label {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
     color: #222;
     text-transform: uppercase;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     text-align: center;
     width: 100%;
-    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 0 4px;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 .mini-bloco input {
     width: 60px !important;
@@ -371,6 +440,15 @@ legend {
     border-color: var(--cor-accent-dark);
     background: #eaeaff !important;
     color: #222 !important;
+}
+.mini-bloco[for="deslocamento"] {
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+}
+.mini-bloco[for="deslocamento"] label {
+    white-space: nowrap;
+    font-size: 12px;
 }
 .pv-bloco {
     display: flex;
