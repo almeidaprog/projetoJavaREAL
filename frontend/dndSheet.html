@@ -5,6 +5,49 @@
     <title>Ficha de Personagem D&D</title>
     <link href="./styles/d&d.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .pericias input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #000;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .pericias input[type="checkbox"]:checked {
+            background-color: white;
+        }
+
+        .pericias input[type="checkbox"]:checked::after {
+            content: "X";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .pericia-valor {
+            width: 40px;
+            height: 20px;
+            text-align: center;
+            margin: 0 5px;
+            padding: 2px;
+            border: 1px solid #000;
+            font-size: 14px;
+        }
+
+        .pericia-item {
+            display: flex;
+            align-items: center;
+            margin: 2px 0;
+        }
+    </style>
 </head>
 <body>
     <div class="background-container">
@@ -121,24 +164,96 @@
                 </fieldset>
                 <fieldset class="pericias">
                     <legend>Perícias</legend>
-                    <div class="pericia-item"><input type="checkbox" id="acrobacia"><label for="acrobacia">Acrobacia (Des)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="arcanismo"><label for="arcanismo">Arcanismo (Int)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="atletismo"><label for="atletismo">Atletismo (For)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="atuacao"><label for="atuacao">Atuação (Car)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="blefar"><label for="blefar">Blefar (Car)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="furtividade"><label for="furtividade">Furtividade (Des)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="historia"><label for="historia">História (Int)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="intimidacao"><label for="intimidacao">Intimidação (Car)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="intuicao"><label for="intuicao">Intuição (Sab)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="investigacao"><label for="investigacao">Investigação (Int)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="lidarComAnimais"><label for="lidarComAnimais">Lidar com Animais (Sab)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="medicina"><label for="medicina">Medicina (Sab)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="natureza"><label for="natureza">Natureza (Int)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="percepcao"><label for="percepcao">Percepção (Sab)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="persuasao"><label for="persuasao">Persuasão (Car)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="prestidigitacao"><label for="prestidigitacao">Prestidigitação (Des)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="religiao"><label for="religiao">Religião (Int)</label></div>
-                    <div class="pericia-item"><input type="checkbox" id="sobrevivencia"><label for="sobrevivencia">Sobrevivência (Sab)</label></div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="acrobacia-checkbox">
+                        <input type="text" class="pericia-valor" id="acrobacia-valor">
+                        <label for="acrobacia-checkbox">Acrobacia (Des)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="arcanismo-checkbox">
+                        <input type="text" class="pericia-valor" id="arcanismo-valor">
+                        <label for="arcanismo-checkbox">Arcanismo (Int)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="atletismo-checkbox">
+                        <input type="text" class="pericia-valor" id="atletismo-valor">
+                        <label for="atletismo-checkbox">Atletismo (For)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="atuacao-checkbox">
+                        <input type="text" class="pericia-valor" id="atuacao-valor">
+                        <label for="atuacao-checkbox">Atuação (Car)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="blefar-checkbox">
+                        <input type="text" class="pericia-valor" id="blefar-valor">
+                        <label for="blefar-checkbox">Blefar (Car)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="furtividade-checkbox">
+                        <input type="text" class="pericia-valor" id="furtividade-valor">
+                        <label for="furtividade-checkbox">Furtividade (Des)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="historia-checkbox">
+                        <input type="text" class="pericia-valor" id="historia-valor">
+                        <label for="historia-checkbox">História (Int)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="intimidacao-checkbox">
+                        <input type="text" class="pericia-valor" id="intimidacao-valor">
+                        <label for="intimidacao-checkbox">Intimidação (Car)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="intuicao-checkbox">
+                        <input type="text" class="pericia-valor" id="intuicao-valor">
+                        <label for="intuicao-checkbox">Intuição (Sab)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="investigacao-checkbox">
+                        <input type="text" class="pericia-valor" id="investigacao-valor">
+                        <label for="investigacao-checkbox">Investigação (Int)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="lidarComAnimais-checkbox">
+                        <input type="text" class="pericia-valor" id="lidarComAnimais-valor">
+                        <label for="lidarComAnimais-checkbox">Lidar com Animais (Sab)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="medicina-checkbox">
+                        <input type="text" class="pericia-valor" id="medicina-valor">
+                        <label for="medicina-checkbox">Medicina (Sab)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="natureza-checkbox">
+                        <input type="text" class="pericia-valor" id="natureza-valor">
+                        <label for="natureza-checkbox">Natureza (Int)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="percepcao-checkbox">
+                        <input type="text" class="pericia-valor" id="percepcao-valor">
+                        <label for="percepcao-checkbox">Percepção (Sab)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="persuasao-checkbox">
+                        <input type="text" class="pericia-valor" id="persuasao-valor">
+                        <label for="persuasao-checkbox">Persuasão (Car)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="prestidigitacao-checkbox">
+                        <input type="text" class="pericia-valor" id="prestidigitacao-valor">
+                        <label for="prestidigitacao-checkbox">Prestidigitação (Des)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="religiao-checkbox">
+                        <input type="text" class="pericia-valor" id="religiao-valor">
+                        <label for="religiao-checkbox">Religião (Int)</label>
+                    </div>
+                    <div class="pericia-item">
+                        <input type="checkbox" id="sobrevivencia-checkbox">
+                        <input type="text" class="pericia-valor" id="sobrevivencia-valor">
+                        <label for="sobrevivencia-checkbox">Sobrevivência (Sab)</label>
+                    </div>
                 </fieldset>
                 <div class="sabedoria-passiva">
                     <label for="sabedoriaPassiva">Sabedoria Passiva (Percepção):</label>
@@ -263,5 +378,35 @@
             </fieldset>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleciona todos os checkboxes de perícias
+            const checkboxesPericias = document.querySelectorAll('.pericias input[type="checkbox"]');
+            
+            // Adiciona evento de clique para cada checkbox
+            checkboxesPericias.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    // Atualiza o valor do campo de texto correspondente
+                    const valorInput = this.parentElement.querySelector('.pericia-valor');
+                    const valorDigitado = parseInt(valorInput.value) || 0;
+                    
+                    if (this.checked) {
+                        valorInput.value = valorDigitado + 2; // Soma o valor digitado com +2
+                    } else {
+                        valorInput.value = valorDigitado - 2; // Subtrai o +2 do valor digitado
+                    }
+                });
+
+                // Adiciona evento de input para o campo de valor
+                const valorInput = checkbox.parentElement.querySelector('.pericia-valor');
+                valorInput.addEventListener('input', function() {
+                    const valorDigitado = parseInt(this.value) || 0;
+                    if (checkbox.checked) {
+                        this.value = valorDigitado + 2; // Mantém o +2 somado ao valor digitado
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
